@@ -36,8 +36,8 @@ INSERT INTO "#PARAMS" VALUES ('MIN_SPLIT_LOSS', null, 0.0, null);
 INSERT INTO "#PARAMS" VALUES ('LEARNING_RATE', null, 0.5, null);
 INSERT INTO "#PARAMS" VALUES ('CV_METRIC', null, null, 'ERROR_RATE');
 INSERT INTO "#PARAMS" VALUES ('REF_METRIC', null, null, 'AUC');
-INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', null, null, 'AGE');
-INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', null, null, 'AMOUNT');
+INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', null, null, 'AGE'); -- specify column as continuous (default for integer columns is categorical)
+INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', null, null, 'AMOUNT'); -- specify column as continuous (default for integer columns is categorical)
 
 TRUNCATE TABLE "CV";
 TRUNCATE TABLE "MODEL";

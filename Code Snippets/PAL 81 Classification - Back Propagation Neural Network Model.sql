@@ -45,7 +45,7 @@ INSERT INTO "#PARAMS" VALUES ('HIDDEN_LAYER_SIZE', null, null, '10,10');
 --INSERT INTO "#PARAMS" VALUES ('TRAINING_STYLE', 1, null, null); -- 0:Batch; 1:Stochastic
 --INSERT INTO "#PARAMS" VALUES ('NORMALIZATION', 0, null, null); -- 0:Normal; 1:Z-transform; 2:Scalar
 --INSERT INTO "#PARAMS" VALUES ('WEIGHT_INIT', 0, null, null); -- 0:all zeros; 1: normal; 2: uniform
---INSERT INTO "#PARAMS" VALUES ('CATEGORY_COL', 0, null, null);
+--INSERT INTO "#PARAMS" VALUES ('CATEGORY_COL', 0, null, null); -- specify column # as categorical (default for integer columns is continuous)
 
 TRUNCATE TABLE "STATS";
 TRUNCATE TABLE "MODEL";

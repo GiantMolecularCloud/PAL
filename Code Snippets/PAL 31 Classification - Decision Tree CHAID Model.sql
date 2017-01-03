@@ -30,11 +30,8 @@ INSERT INTO DT_PARAMS VALUES ('PERCENTAGE', null, 1.0, null);
 INSERT INTO DT_PARAMS VALUES ('MIN_NUMS_RECORDS', 1, null, null);
 INSERT INTO DT_PARAMS VALUES ('IS_SPLIT_MODEL', 0, null, null);
 INSERT INTO DT_PARAMS VALUES ('PMML_EXPORT', 1, null, null);
-INSERT INTO DT_PARAMS VALUES ('CONTINUOUS_COL', 1, 30, null);
-INSERT INTO DT_PARAMS VALUES ('CONTINUOUS_COL', 1, 50, null);
-INSERT INTO DT_PARAMS VALUES ('CONTINUOUS_COL', 2, 500, null);
-INSERT INTO DT_PARAMS VALUES ('CONTINUOUS_COL', 2, 1000, null);
-INSERT INTO DT_PARAMS VALUES ('CONTINUOUS_COL', 2, 2000, null);
+INSERT INTO DT_PARAMS VALUES ('CONTINUOUS_COL', 1, null, null); -- specify column # as continuous (default for integer columns is categorical)
+INSERT INTO DT_PARAMS VALUES ('CONTINUOUS_COL', 2, null, null); -- specify column # as continuous (default for integer columns is categorical)
 
 -- app runtime
 

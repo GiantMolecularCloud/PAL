@@ -41,11 +41,8 @@ DROP TABLE "#PARAMS";
 CREATE LOCAL TEMPORARY COLUMN TABLE "#PARAMS" LIKE "T_PARAMS";
 INSERT INTO "#PARAMS" VALUES ('TREES_NUM', 300, null, null); 	-- default: 500
 INSERT INTO "#PARAMS" VALUES ('TRY_NUM', 3, null, null);	 	-- default: sqrt(nr.dependent variables) when classification
-INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', 1, 30, null);	-- default: from input type (int/char is categorical, double is continuous)
-INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', 1, 50, null);
-INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', 2, 500, null);
-INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', 2, 1000, null);
-INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', 2, 2000, null);
+INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', 1, null, null); -- specify column # as continuous (default for integer columns is categorical)
+INSERT INTO "#PARAMS" VALUES ('CONTINUOUS_COL', 2, null, null); -- specify column # as continuous (default for integer columns is categorical)
 
 TRUNCATE TABLE "MODEL";
 TRUNCATE TABLE "IMPORTANCE";

@@ -36,7 +36,7 @@ INSERT INTO #SS_PARAMS VALUES ('THREAD_NUMBER', 2, null, null);
 INSERT INTO #SS_PARAMS VALUES ('DISTANCE_LEVEL', 2, null, null); --1:Manhattan, 2:Euclidean, 3:Minkowski, 4:Chebyshev
 INSERT INTO #SS_PARAMS VALUES ('NORMALIZATION', 0, null, null);
 --INSERT INTO #SS_PARAMS VALUES ('MINKOWSKI_POWER', null, 3.0, null);
---INSERT INTO #SS_PARAMS VALUES ('CATEGORY_COL', 1, null, null);
+--INSERT INTO #SS_PARAMS VALUES ('CATEGORY_COL', 1, null, null); -- specify column # as categorical (default for integer columns is continuous)
 --INSERT INTO #SS_PARAMS VALUES ('CATEGORY_WEIGHTS', null, 0.7, null);
 
 TRUNCATE TABLE SS_RESULTS;

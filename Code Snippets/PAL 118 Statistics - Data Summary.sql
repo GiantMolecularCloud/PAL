@@ -29,7 +29,7 @@ CREATE COLUMN TABLE "RESULTS_CATEGORICAL" LIKE "T_CATEGORICAL";
 -- runtime
 DROP TABLE "#PARAMS";
 CREATE LOCAL TEMPORARY COLUMN TABLE "#PARAMS" LIKE "T_PARAMS";
---INSERT INTO "#PARAMS" VALUES ('CATEGORY_COL', 3, null, null); -- default -1
+--INSERT INTO "#PARAMS" VALUES ('CATEGORY_COL', 3, null, null); -- specify column # as categorical (default for integer columns is continuous)
 --INSERT INTO "#PARAMS" VALUES ('SIGNIFICANCE_LEVEL', null, 0.05, null); -- 0 --> 1
 --INSERT INTO "#PARAMS" VALUES ('TRIMMED_PERCENTAGE', null, 0.05, null); -- 0 --> 0.5
 
