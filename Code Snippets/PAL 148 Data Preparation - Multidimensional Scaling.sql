@@ -1,0 +1,28 @@
+-- clean up
+DROP VIEW "DATA";
+DROP TABLE "#PARAMS";
+DROP TABLE "RESULTS";
+DROP TABLE "STATS";
+
+-- input data
+CREATE VIEW "DATA" AS 
+ SELECT "ID", "LIFESPEND", "NEWSPEND", "INCOME", "LOYALTY" 
+  FROM "PAL"."CUSTOMERS";
+ 
+-- parameters
+CREATE LOCAL TEMPORARY COLUMN TABLE "#PARAMS" ("NAME" VARCHAR(60), "INTARGS" INTEGER, "DOUBLEARGS" DOUBLE, "STRINGARGS" VARCHAR(100));
+INSERT INTO "#PARAMS" VALUES ('THREAD_RATIO', null, 1.0, null); -- Between 0 and 1
+INSERT INTO "#PARAMS" VALUES ('INPUT_TYPE', 0, null, null); -- 0: Observation, 1: Dissimilarity
+--INSERT INTO "#PARAMS" VALUES ('K', 2, null, null); -- Number of dimensions to be reduced to (Default:2)
+--INSERT INTO "#PARAMS" VALUES ('DISTANCE_LEVEL', 3, null, null); -- 1: Manhattan, 2: Euclidean, 3: Minkowski (Default:2) when INPUT_TYPE:0
+--INSERT INTO "#PARAMS" VALUES ('MINKOWSKI_POWER', null, 5.0, null); -- (Default:3.0) when INPUT_TYPE:0 and DISTANCE_LEVEL:3
+
+-- call : results inline
+CALL "_SYS_AFL"."PAL_MDS" ("DATA", "#PARAMS", ?, ?);
+
+-- call : results in table
+CREATE COLUMN TABLE "RESULTS" ("ID" INTEGER, "DIMENSION" INTEGER, "VALUE" DOUBLE);
+CREATE COLUMN TABLE "STATS" ("STATISTIC" NVARCHAR(100), "VALUE" DOUBLE);
+CALL "_SYS_AFL"."PAL_MDS" ("DATA", "#PARAMS", "RESULTS", "STATS") WITH OVERVIEW;
+SELECT * FROM "RESULTS";
+SELECT * FROM "STATS";
